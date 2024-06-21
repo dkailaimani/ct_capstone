@@ -1,0 +1,45 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background: url('https://media.architecturaldigest.com/photos/63079fc7b4858efb76814bd2/16:9/w_4000,h_2250,c_limit/9.%20DeLorean-Alpha-5%20%5BDeLorean%5D.jpg') no-repeat center center fixed;
+    background-size: cover;
+    height: 100vh;
+}
+
+.container {
+    justify-content: center;
+}
+
+.car-item {
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    /* Adjust padding for spacing */
+    border-radius: 5px;
+    width: calc(20% - 20px);
+    /* Adjust width to fit 3 items per row */
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    margin-left: 20px;
+    padding-right: 20px;
+}
+
+.car-item h3 {
+    margin-top: 0;
+    font-size: 18px;
+    color: black;
+}
+
+.car-item p {
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 215px;
+    color: white;
+    text-decoration-line: line-through;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
