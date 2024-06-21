@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Car Data</title>
+    <link rel="stylesheet" href="data.css">
+</head>
+
+<body>
+    <h1>CARDAX CARS FOR SALE</h1>
+    <div id="data"></div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const dataContainer = document.getElementById('data');
+
+            // Retrieve data from sessionStorage
+            const carsData = sessionStorage.getItem('carsData');
+
+            if (carsData) {
+                const data = JSON.parse(carsData);
+
+                // Display fetched car data
+                if (data.length === 0) {
+                    dataContainer.textContent = 'No cars found.';
+                } else {
+                    data.forEach(car => {
+                        const carElement = document.createElement('div');
+                        carElement.classList.add('car-item');
+                        carElement.innerHTML = `
+                            <h3>${car.car_name}</h3>
+                            <p>Type: ${car.type_of_car}</p>
+                            <p>Model: ${car.car_model}</p>
+                            <p>Year: ${car.car_year}</p>
+                            <p>Mileage: ${car.car_mileage}</p>
+                            <p>Cost: ${car.car_cost}</p>
+                            <p>Wheel Drive: ${car.num_of_wheel_drive}</p>
+                            <p>Interior: ${car.interior_material}</p>
+                            <p>Engine: ${car.engine_type}</p>
+                        `;
+                        dataContainer.appendChild(carElement);
+                    });
+                }
+            } else {
+                dataContainer.textContent = 'No car data available.';
+            }
+           
+            sessionStorage.removeItem('carsData');
+        });
+    </script>
+</body>
+
+</html>
