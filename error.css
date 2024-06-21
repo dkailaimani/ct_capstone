@@ -1,0 +1,31 @@
+body {
+    background-image: url('https://images.cars.com/cldstatic/wp-content/uploads/jeep-wrangler-jpp-2020-01-angle--blue--exterior--front.jpg');
+   
+    background-size: cover;
+    background-position: center;
+    font-family: Arial, sans-serif;
+    color: #fff;
+    text-align: center;
+    height: 100vh;
+  
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    background-color: rgba(0, 0, 0, 0.5);
+   
+    padding: 20px;
+    border-radius: 10px;
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 1.5rem;
+}
