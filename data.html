@@ -16,13 +16,12 @@
         document.addEventListener('DOMContentLoaded', function () {
             const dataContainer = document.getElementById('data');
 
-            // Retrieve data from sessionStorage
+           
             const carsData = sessionStorage.getItem('carsData');
 
             if (carsData) {
                 const data = JSON.parse(carsData);
 
-                // Display fetched car data
                 if (data.length === 0) {
                     dataContainer.textContent = 'No cars found.';
                 } else {
