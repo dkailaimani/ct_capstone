@@ -13,12 +13,11 @@ body {
 
 .car-item {
     text-align: center;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(255, 255, 255, 0.5);
+
     padding: 20px;
-    /* Adjust padding for spacing */
     border-radius: 5px;
     width: calc(20% - 20px);
-    
     box-sizing: border-box;
     margin-bottom: 10px;
     margin-left: 20px;
@@ -29,7 +28,7 @@ body {
     margin-top: 0;
     font-size: 18px;
     color: black;
-}
+   }
 
 .car-item p {
     margin-bottom: 8px;
@@ -41,14 +40,15 @@ body {
     padding: 10px;
     margin-bottom: 20px;
     width: 300px;
-  }
+    margin-left: 530px;
+    }
 
 .car-item img {
     width: 100%;
     height: auto;
     display: block;
     margin-bottom: 10px;
-}
+   }
 
 h1 {
     text-align: center;
