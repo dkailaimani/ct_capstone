@@ -25,9 +25,10 @@ class chosen_car_schema(ma.Schema):
     car_color = fields.String(required=True)
     interior_material = fields.String(required=True)
     engine_type = fields.String(required=True)
+    photo_url = fields.String(required=True)
 
     class Meta:
-        fields = ("id", "type_of_car","car_model","car_name","car_year","car_cost","num_of_wheel_drive","car_mileage","car_color","interior_material","engine_type")
+        fields = ("id", "type_of_car","car_model","car_name","car_year","car_cost","num_of_wheel_drive","car_mileage","car_color","interior_material","engine_type","photo_url")
 chosen_schema = chosen_car_schema()
 chosens_schema = chosen_car_schema(many=True)
 
@@ -102,10 +103,10 @@ def add_chosen_car():
             chosen_car_data["type_of_car"], chosen_car_data["car_model"], chosen_car_data["car_name"],
             chosen_car_data["car_year"], chosen_car_data["car_cost"], chosen_car_data["num_of_wheel_drive"],
             chosen_car_data["car_mileage"], chosen_car_data["car_color"],
-            chosen_car_data["interior_material"], chosen_car_data["engine_type"]
+            chosen_car_data["interior_material"], chosen_car_data["engine_type"], chosen_car_data["photo_url"]
         )
 
-        query = "INSERT INTO chosen_car (id, type_of_car, car_model, car_name, car_year, car_cost, num_of_wheel_drive, car_mileage, car_color, interior_material, engine_type) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
+        query = "INSERT INTO chosen_car (id, type_of_car, car_model, car_name, car_year, car_cost, num_of_wheel_drive, car_mileage, car_color, interior_material, engine_type, photo_url) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
         cursor.execute(query, new_chosen_car)
         conn.commit()
 
@@ -195,9 +196,10 @@ def update_chosen_car(id):
             chosen_car_data["car_color"],
             chosen_car_data["interior_material"],
             chosen_car_data["engine_type"],
+            chosen_car_data["photo_url"],
             id  
         )
-        query = 'UPDATE chosen_car SET type_of_car = %s, car_model = %s, car_name = %s, car_year = %s, car_cost = %s, num_of_wheel_drive = %s, car_mileage = %s, car_color = %s, interior_material = %s, engine_type = %s WHERE id = %s'
+        query = 'UPDATE chosen_car SET type_of_car = %s, car_model = %s, car_name = %s, car_year = %s, car_cost = %s, num_of_wheel_drive = %s, car_mileage = %s, car_color = %s, interior_material = %s, engine_type = %s, photo_url = %s WHERE id = %s'
         
         cursor.execute(query, updated_chosen_car)
         conn.commit()
