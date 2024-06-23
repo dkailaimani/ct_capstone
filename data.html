@@ -8,7 +8,8 @@
 </head>
 
 <body>
-    <h1>CARDAX CARS FOR SALE</h1>
+    <h1>CARS FOR SALE</h1>
+    <h2 id="cardax">CARDAX</h2>
     <div id="data"></div>
 
     <script>
@@ -26,26 +27,31 @@
                     dataContainer.textContent = 'No cars found.';
                 } else {
                     data.forEach(car => {
+                        console.log(car);
                         const carElement = document.createElement('div');
                         carElement.classList.add('car-item');
+
                         carElement.innerHTML = `
+                            <img src="${car.photo_url}" alt="${car.car_name}">
                             <h3>${car.car_name}</h3>
                             <p>Type: ${car.type_of_car}</p>
+                            <p>Color: ${car.car_color}</p>
                             <p>Model: ${car.car_model}</p>
                             <p>Year: ${car.car_year}</p>
                             <p>Mileage: ${car.car_mileage}</p>
-                            <p>Cost: ${car.car_cost}</p>
+                            <p>Cost: $${car.car_cost}</p>
                             <p>Wheel Drive: ${car.num_of_wheel_drive}</p>
                             <p>Interior: ${car.interior_material}</p>
                             <p>Engine: ${car.engine_type}</p>
                         `;
                         dataContainer.appendChild(carElement);
+
                     });
                 }
             } else {
                 dataContainer.textContent = 'No car data available.';
             }
-           
+
             sessionStorage.removeItem('carsData');
         });
     </script>
