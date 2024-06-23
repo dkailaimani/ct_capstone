@@ -18,7 +18,7 @@ body {
     /* Adjust padding for spacing */
     border-radius: 5px;
     width: calc(20% - 20px);
-    /* Adjust width to fit 3 items per row */
+    
     box-sizing: border-box;
     margin-bottom: 10px;
     margin-left: 20px;
@@ -36,10 +36,33 @@ body {
     font-size: 14px;
 }
 
+.car-item {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 20px;
+    width: 300px;
+  }
+
+.car-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 10px;
+}
+
 h1 {
     text-align: center;
     margin-top: 215px;
     color: white;
-    text-decoration-line: line-through;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#cardax {
+    color: black;
+    font: 150;
+    text-align: right;
+    margin-right: 100px;
+    margin-top: 300px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    letter-spacing: 2px;
 }
